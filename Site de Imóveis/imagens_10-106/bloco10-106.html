@@ -75,6 +75,40 @@
         @media (max-width: 768px) {
             .hero-detail h1 { font-size: 2rem; } .action-buttons { flex-direction: column; }
         }
+        /* Estilo comum para os dois botões */
+.btn-padrao {
+    /* Define uma largura fixa para garantir que sejam iguais */
+    width: 200px; 
+    
+    /* Ou use padding igual nos dois */
+    padding: 15px 0; 
+    
+    /* Garante que bordas e padding não aumentem o tamanho total */
+    box-sizing: border-box; 
+    
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    border: 2px solid transparent; /* Evita que o botão "pule" ao adicionar borda no outro */
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Cor específica do Laranja */
+.btn-agendar {
+    background-color: #ff6a33;
+    color: white;
+    border-color: #ff6a33;
+}
+
+/* Cor específica do Branco */
+.btn-whatsapp {
+    background-color: white;
+    color: #ff6a33;
+    border-color: #ff6a33;
+}
     </style>
 </head>
 <body>
@@ -151,22 +185,11 @@ Reformado. Porcelanato na sala, 2 Quartos excelentes, cozinha, banheiro com box,
         <!-- BOTÕES DE AÇÃO -->
         <section class="section">
             <div class="action-buttons">
-                <button class="btn-primary" onclick="alert('📅 Visita agendada!')">Agendar Visita</button>
-                <button class="btn-secondary" onclick="window.open('https://wa.me/989327184?text=Quero%20mais%20info%20do%20apto%20Jardins')">WhatsApp</button>
+                <a href="https://wa.me/989327184?text=Quero%20mais%20info%20do%20apto%20Jardins" target="_blank" style="text-decoration: none;">
+                    <button class="btn-padrao btn-agendar">Agendar Visita</button>
+                </a>
             </div>
         </section>
-    </div>
-Documentação Totalmente em dia.
-Aceita Financiamento. </p>
-            </div>
-        </section>
-
-        <!-- BOTÕES DE AÇÃO -->
-        <section class="section">
-            <div class="action-buttons">
-                <button class="btn-primary" onclick="alert('📅 Visita agendada!')">Agendar Visita</button>
-                <button class="btn-secondary" onclick="window.open('https://wa.me/989327184?text=Quero%20mais%20info%20do%20apto%20Jardins')">WhatsApp</button>
-            </div>
         </section>
     </div>
 </body>
