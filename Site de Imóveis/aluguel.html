@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluguel - Zelimar Consultoria</title>
+    <style>
+    /* CONFIGURAÇÕES GERAIS */
+    body { 
+        font-family: 'Arial', sans-serif; 
+        margin: 0; 
+        background-color: #f9f9f9; 
+        color: #333;
+    }
+
+    /* 1. BARRA SUPERIOR (NAVBAR) */
+    .barra-superior {
+        background-color: #ff6b35; /* Laranja principal */
+        padding: 12px 5%;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .btn-voltar {
+    background-color: white;
+    color: #ff6b35; /* Cor do texto igual ao laranja da barra */
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 50px; /* Isso cria o formato de cápsula/círculo nas pontas */
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-voltar:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05); /* Efeito de crescer levemente ao passar o mouse */
+}
+
+/* Ajuste para a casinha (logo) não ficar azul */
+.logo {
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+
+    .icone-casa {
+        width: 35px;
+        height: auto;
+    }
+
+    /* 2. BANNER DE DESTAQUE (HERO) */
+    .hero-aluguel {
+        background-color: #f15a1f; /* Laranja claro do banner */
+        padding: 50px 20px;
+        text-align: center;
+        color: white;
+    }
+
+    .hero-aluguel h1 {
+        font-size: 3.5rem;
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .hero-aluguel p {
+        font-size: 1.2rem;
+        margin: 5px 0 0;
+        opacity: 0.9;
+    }
+
+    /* 3. GRADE DE IMÓVEIS (IGUAL AO INDEX) */
+    .properties-section { 
+        padding: 50px 5%; 
+    }
+
+    .properties { 
+        display: grid; 
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas fixas */
+        gap: 25px; 
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* 4. O CARD (BLOCO) - ALTURA FIXA */
+    .property-card { 
+        background: white; 
+        border-radius: 15px; 
+        overflow: hidden; 
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08); 
+        display: flex; 
+        flex-direction: column; 
+        height: 420px; /* Altura total do card */
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.3s ease;
+    }
+
+    .property-card:hover { 
+        transform: translateY(-8px); 
+    }
+
+    /* ÁREA DA IMAGEM */
+    .property-image {
+        width: 100%;
+        height: 200px; /* Altura fixa da foto */
+        background-color: #ddd; /* Fundo cinza se a foto não carregar */
+    }
+
+    .property-image img { 
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; /* Faz a foto preencher sem distorcer */
+    }
+
+    /* TEXTO DENTRO DO CARD */
+    .property-content { 
+        padding: 20px; 
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .property-price { 
+        font-size: 1.5rem; 
+        font-weight: bold; 
+        color: #ff6b35; 
+        margin-bottom: 10px;
+    }
+
+    .property-title { 
+        font-size: 1.2rem; 
+        margin-bottom: 8px; 
+        color: #222;
+        font-weight: bold;
+    }
+
+    .property-summary { 
+        font-size: 0.9rem; 
+        color: #666; 
+        line-height: 1.4;
+        /* Limita o texto a 3 linhas */
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* RESPONSIVIDADE (PARA CELULAR E TABLET) */
+    @media (max-width: 992px) {
+        .properties { grid-template-columns: repeat(2, 1fr); }
+        .hero-aluguel h1 { font-size: 2.8rem; }
+    }
+
+    @media (max-width: 650px) {
+        .properties { grid-template-columns: 1fr; }
+        .hero-aluguel h1 { font-size: 2.2rem; }
+        .property-card { height: auto; min-height: 380px; }
+    }
+</style>
+</head>
+<body>
+
+    <div class="barra-superior">
+    <a href="./index.html" class="logo">🏠</a>
+    <a href="./index.html" class="btn-voltar">← Voltar aos Imóveis</a>
+</div>
+
+    <div class="hero-aluguel">
+        <h1>Aluguel</h1>
+        <p>Encontre o imóvel ideal para você</p>
+    </div>
+
+    <section class="properties-section">
+    <div class="properties">
+
+        <a href="./Aluguel_10-106/aluguel10-106.html" class="property-card">
+            <div class="property-image">
+                <img src="../cnjt11.jpg" alt="Bloco 10-106">
+            </div>
+            <div class="property-content">
+                <div class="property-price">R$  900,00</div>
+                <h3 class="property-title">Bloco 10 - 106</h3>
+                <strong>
+                <p class="property-summary" style="font-size: 1.4rem;">R$ 900,00 + 1 mês de depósito 
+Facilito o depósito em 2x.</p>
+</strong>
+            </div>
+        </a>
+
+        
+
+    </div> </section>
+
+</body>
+</html>

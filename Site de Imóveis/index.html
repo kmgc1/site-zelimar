@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zelimar Consultoria Imobiliária</title>
+    <style>
+        /* CONFIGURAÇÕES GERAIS */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; background-color: #f4f4f4; }
+        :root {
+            --laranja: #FF6B35; 
+            --laranja-claro: #FF8C42; 
+            --branco: #FFF; 
+            --cinza: #6C757D;
+            --azul-escuro: #2d3436;
+            --whatsapp: #25D366;
+            --preto: #000;
+        }
+
+        /* HEADER E NAVEGAÇÃO */
+        header {
+            background: linear-gradient(135deg, var(--laranja) 0%, #E55A2B 100%);
+            color: white; padding: 1rem 0; position: fixed; width: 100%; top: 0; z-index: 1000;
+        }
+        nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; padding: 0 2rem; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 500; }
+        .login-btn {
+            background: white; color: var(--laranja); padding: 0.5rem 1.5rem; border-radius: 25px;
+            font-weight: bold; cursor: pointer; text-decoration: none;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(255,107,53,0.9), rgba(255,107,53,0.7)), #ddd;
+            min-height: 80vh; display: flex; flex-direction: column; align-items: flex end; justify-content: center;
+            text-align: right; color: white; margin-top: 60px; padding: 0 2rem; padding-right: 10%;
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .cta-button {
+            background: white; color: var(--laranja); padding: 1rem 2.5rem; border: none;
+            border-radius: 50px; font-size: 1.2rem; font-weight: bold; cursor: pointer;
+            transition: 0.3s; text-decoration: none;
+        }
+        .cta-button:hover { transform: scale(1.05); background: #eee; }
+
+        /* CONTAINER PRINCIPAL */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .section { padding: 4rem 0; }
+
+        /* AS DUAS CAIXAS DE TEXTO (SUPERIORES) */
+        .text-boxes-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            align-items: start;
+        }
+        .text-box-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            border-bottom: 4px solid var(--laranja);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .text-box-item h3 { color: var(--laranja); margin-bottom: 0.5rem; text-align: center; font-size: 1.8rem; }
+
+        /* GRADE DE IMÓVEIS (CARDS) */
+        .properties {
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .property-card {
+            background: white; border-radius: 15px; overflow: hidden; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-decoration: none; color: inherit; display: flex; flex-direction: column;
+            transition: 0.3s;
+            height: 100%;
+        }
+        .property-card:hover { transform: translateY(-10px); }
+
+        .property-image {
+            height: 220px; width: 100%; overflow: hidden;
+        }
+        .property-image img {
+            width: 100%; height: 100%; object-fit: cover; display: block;
+        }
+
+        .property-content { padding: 1.5rem; text-align: center; flex-grow: 1; }
+        .property-price { color: var(--laranja); font-size: 1.8rem; font-weight: bold; margin-bottom: 10px; }
+        .property-title { font-size: 1.2rem; margin: 0.5rem 0; }
+        .property-summary { color: var(--cinza); font-size: 0.9rem; }
+
+        .section-title { text-align: left; font-size: 2rem; color: var(--laranja); margin-top: 3rem; margin-bottom: 1rem; }
+        
+        /* SEÇÃO FLEX (MAPA E INFRA) */
+        .map-flex {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+
+        .map-left { width: 65%; }
+        .map-right { width: 35%; }
+
+        .map-container {
+            width: 100%;
+            height: 250px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .map-container img { width: 100%; height: 100%; object-fit: cover; }
+
+        .infra-texto { font-size: 0.85rem; text-align: left; line-height: 1.4; }
+
+        /* BOTÃO WHATSAPP FLUTUANTE */
+        .whatsapp-float {
+            position: fixed; width: 50px; height: 50px; bottom: 40px; right: 40px;
+            background-color: var(--whatsapp); color: #FFF; border-radius: 50px;
+            text-align: center; font-size: 22px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 1001; display: flex; align-items: center; justify-content: center;
+            text-decoration: none; transition: 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); background-color: #128C7E; }
+        
+        /* RODAPÉ */
+        .main-footer { background: var(--azul-escuro); color: white; padding: 3rem 0 1rem; margin-top: 4rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .footer-grid h3 { color: var(--laranja); margin-bottom: 1rem; }
+        .social-icons a { color: white; text-decoration: none; margin-right: 1rem; font-weight: bold; }
+        .footer-bottom { text-align: center; border-top: 1px solid #444; margin-top: 2rem; padding-top: 1rem; font-size: 0.8rem; }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 900px) {
+            /* ADICIONE ESTAS LINHAS AQUI: */
+        .text-boxes-container { 
+            grid-template-columns: 1fr !important; 
+            gap: 1.5rem; 
+    }
+            .properties { grid-template-columns: 1fr; }
+            .map-flex { flex-direction: column; }
+            .map-left, .map-right { width: 100%; }
+        }
+
+/* --- ATUALIZAÇÕES PARA O HERO (Adicionar no <style>) --- */
+
+.hero {
+    background: linear-gradient(rgba(255,107,53,0.9), rgba(255,107,53,0.7)), #ddd;
+    min-height: 80vh;
+    margin-top: 60px;
+    
+    /* O SEGREDO DO ALINHAMENTO */
+    display: flex;
+    flex-direction: row;      /* Garante que logo e texto fiquem lado a lado */
+    justify-content: space-between; /* Empurra um para cada ponta */
+    align-items: flex-start;  /* ALINHA TUDO NO TOPO */
+    
+    /* CONTROLE DA ALTURA (Mude o 20px para subir/descer tudo) */
+    padding: 20px 5% 2rem 5%; 
+}
+
+.hero-logo-container {
+    margin: 0; 
+    padding: 0;
+    flex: 0 0 auto;
+}
+
+.hero-logo {
+    width: 500px; /* Mantendo o tamanho que você gostou */
+    height: auto;
+    display: block;
+    margin-top: 0; /* Garante que não haja espaço acima da imagem */
+}
+
+.hero-content {
+    /* MÁGICA 2: margin-left: auto funciona como um "imã" empurrando este bloco inteiro para o final (direita) do container Flex */
+    margin-left: auto; 
+    text-align: center; /* Alinha as linhas de texto *dentro* deste bloco à direita */
+    max-width: 500px; /* Limita a largura máxima do texto para ele não ficar gigante */
+    color: white; /* Garante que o texto seja branco */
+    align-self: flex-start; /* Alinha este bloco específico ao topo, combinando com o logo */
+    /* O margin-top aqui pode ser ajustado se o texto estiver muito colado no topo */
+}
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 2.0rem; /* Diminuí a margem para subir o parágrafo também */
+    line-height: 1.0;
+}
+
+.hero-content p {
+    font-size: 1.8rem;
+    margin-top: 0;
+}
+
+/* SEÇÃO DE CONTATO ESTILO FORMULÁRIO */
+.contato-section {
+    background-color: #1a1a1a; /* Fundo quase preto */
+    color: white;
+    padding: 60px 0;
+}
+
+.container-contato {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+/* Informações da Esquerda */
+.contato-info {
+    flex: 1;
+}
+
+.contato-logo-texto {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.detalhe-losango {
+    color: var(--laranja);
+    font-size: 2.5rem;
+}
+
+.contato-logo-texto h2 {
+    font-size: 2rem;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.contato-detalhes h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid white;
+    display: inline-block;
+}
+
+.contato-detalhes p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* Container da direita onde fica o formulário */
+.contato-form-container {
+    flex: 1;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o formulário horizontalmente */
+}
+
+.contato-form-container h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    width: 100%;
+    
+    /* O SEGREDO ESTÁ AQUI */
+    line-height: 1.0;    /* Diminui o espaço entre a linha de cima e a de baixo */
+    margin-bottom: 15px; /* Mantém uma distância saudável do primeiro campo */
+}
+
+/* Garante que o formulário ocupe a largura total do container */
+.contato-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%; 
+    max-width: 500px; /* Opcional: define uma largura máxima para não esticar demais */
+}
+
+.contato-form input, 
+.contato-form textarea {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.btn-enviar {
+    background-color: #b30000; /* Vermelho escuro conforme a imagem */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.btn-enviar:hover {
+    background-color: #e60000;
+}
+
+/* Ajuste para Celular */
+@media (max-width: 768px) {
+    .container-contato {
+        flex-direction: column;
+    }
+}
+.footer-simples {
+    background-color: #1a1a1a; /* Cor igual ao fundo do contato */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    border-top: 1px solid #333; /* Linha sutil para separar do formulário */
+}
+
+.footer-simples p {
+    margin: 0;
+    opacity: 0.8; /* Deixa o texto levemente mais suave */
+}
+.hero {
+    background-color: #f15a1f; /* Garante que o fundo seja o laranja vibrante */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 60px 20px;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem; /* Tamanho grande para o título */
+    color: white;
+    margin-bottom: 15px;
+}
+
+.servicos-texto {
+    color: white;
+    font-size: 1.3rem; /* Tamanho médio para ser fácil de ler */
+    font-weight: bold;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.logo-banner {
+    max-width: 300px; /* Evita que a logo fique gigante */
+    height: auto;
+}
+/* Adicione isso no final do seu CSS para dar o espaço necessário */
+.cta-button {
+    display: inline-block !important; /* Garante que o botão aceite margens */
+    margin-bottom: 50px !important;   /* Empurra o texto debaixo para longe */
+    padding: 12px 30px !important;
+    border-radius: 50px !important;
+}
+
+.hero-content h1 {
+    margin-top: 10px !important; 
+    line-height: 1.3 !important;
+}
+/* Isso vai subir a logo no banner */
+.hero-logo-container img {
+    margin-top: -50px !important; /* Margem negativa EMPURRA PARA CIMA */
+    position: relative; /* Necessário para a margem negativa funcionar bem */
+    z-index: 10;        /* Garante que a logo fique sobre o fundo */
+    transition: 0.3s;   /* Adiciona uma animação suave ao carregar */
+}
+.bla h1 {
+    font-size: 2.0rem;
+    color: white;
+    margin-bottom: 15px;
+    align-content: center;
+
+}
+@media (max-width: 768px) {
+
+    .hero {
+        flex-direction: column; /* empilha logo e texto */
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .hero-logo {
+        width: 250px; /* diminui a logo no celular */
+    }
+
+    .hero-logo-container img {
+        margin-top: 0 !important; /* REMOVE aquela gambiarra que quebra tudo */
+    }
+
+    .hero-content {
+        margin-left: 0;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .servicos-texto {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        margin-bottom: 20px !important;
+    }
+}
+.section-title {
+    margin-bottom: 4rem;
+}
+html, body {
+    overflow-x: hidden;
+}
+    </style>
+</head>
+<body>
+    
+    <a href="https://wa.me/5521989327184" class="whatsapp-float" target="_blank">
+        <span>ZAP</span>
+    </a>
+
+    <header>
+        <nav>
+            <div class="logo">🏠 Zelimar Consultoria</div>
+            <ul class="nav-links">
+                <li><a href="aluguel.html">Aluguel</a></li>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="#imoveis">Imóveis</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <section id="home" class="hero">
+        <div class="hero-logo-container">
+            <img src="./logo.png" alt="Zelimar Consultoria Logo" class="hero-logo">
+        </div>
+
+        <div class="hero-content">
+            <h1>Seu Lar dos Sonhos Está Aqui</h1>
+            <br>
+            <a href="#imoveis" class="cta-button">Ver Imóveis</a>
+
+            <div class="bla">
+        <h1>Regularização de Imóveis em Geral</h1>
+        
+        <div class="servicos-texto">
+            <p>☆ Escritura / RGI</p>
+            <p>☆ Usucapião / Desmembramento</p>
+            <p>☆ Loteamento e muito mais</p>
+        </div>
+        </div>
+    </section>
+    
+
+    <section id="imoveis" class="section">
+        <div class="container">
+            
+            <div class="text-boxes-container">
+                <div class="text-box-item">
+                    <h3>Cod. Residencial Toulon</h3>
+                    <p style="text-align: center;">
+                        <strong style="font-size: 1.5rem;">Av. Brasil - Campo Grande, RJ</strong>
+                    </p>
+                </div>
+                <div class="text-box-item">
+                    <h3>Excelentes Oportunidades!</h3>
+                    <p style="text-align: center;">
+                        <strong style="font-size: 1.2rem;">Apartamentos com dois Quartos, Sala, Cozinha, Banheiro, Área de serviço e Gás canalizado</strong>
+                    </p>
+                </div>
+            </div>
+
+            <div class="properties">
+                <a href="./imagens_14-106/bloco14-106.html" class="property-card">
+                    <div class="property-image"><img src="../Site de Imóveis/imagens/cnjt.jpeg" alt="Bloco_14-106"></div>
+                    <div class="property-content">
+                        <div class="property-price">R$ 150.000,00</div>
+                        <h3 class="property-title">Bloco 14 - 106</h3>
+                        <p class="property-summary">180m² • 3 vagas • Piscina</p>
+                    </div>
+                </a>
+
+                <a href="./imagens_10-105/bloco10-105.html" class="property-card">
+                    <div class="property-image"><img src="../Site de Imóveis/imagens/cntj2.jpeg" alt="Bloco 10-105"></div>
+                    <div class="property-content">
+                        <div class="property-price">R$ 130.000,00</div>
+                        <h3 class="property-title">Bloco 10 - 105</h3>
+                        <p class="property-summary">350m² • Suítes • Área Gourmet</p>
+                    </div>
+                </a>
+
+                
+
+                <a href="./imagens_12-205/bloco12-205.html" class="property-card">
+                    <div class="property-image"><img src="../Site de Imóveis/imagens/cnjt4.jpeg" alt="Bloco_12-205"></div>
+                    <div class="property-content">
+                        <div class="property-price">R$ 150.000,00</div>
+                        <h3 class="property-title">bloco 12 - 205</h3>
+                        <p class="property-summary">450m² • Rooftop • Vista 360°</p>
+                    </div>
+                </a>
+
+                <a href="./imagens_6-103/bloco6-103.html" class="property-card">
+                        <div class="property-image"><img src="../Site de Imóveis/imagens/cnjt9.jpeg" alt="Bloco_6-103"></div>
+                        <div class="property-content">
+                            <div class="property-price">R$ 90.000,00</div>
+                            <h3 class="property-title">Bloco 6 - 103</h3>
+                            <p class="property-summary">450m² • Rooftop • Vista 360°</p>
+                        </div>
+                    </a>
+
+                <a href="./imagens_10-106/bloco10-106.html" class="property-card">
+                        <div class="property-image"><img src="../Site de Imóveis/imagens/cnjt11.jpg" alt="Bloco_10-106"></div>
+                        <div class="property-content">
+                            <div class="property-price">R$ 130.000,00</div>
+                            <h3 class="property-title">Bloco 10 - 106</h3>
+                            <p class="property-summary">450m² • Rooftop • Vista 360°</p>
+                        </div>
+                    </a>
+
+                <a href="./imagens_7-204/bloco7-204.html" class="property-card">
+                    <div class="property-image"><img src="../Site de Imóveis/imagens/cnjt5.jpeg" alt="Bloco_7-204"></div>
+                    <div class="property-content">
+                        <div class="property-price">R$ 130.000,00</div>
+                        <h3 class="property-title">bloco 7 - 204</h3>
+                        <p class="property-summary">450m² • Rooftop • Vista 360°</p>
+                    </div>
+                </a>
+
+                <a href="./imagens_5-202/bloco5-202.html" class="property-card">
+                    <div class="property-image"><img src="./imagens_5-202/s.5-202.jpg" alt="Bloco_5-202"></div>
+                    <div class="property-content">
+                        <div class="property-price">R$ 150.000,00</div>
+                        <h3 class="property-title">bloco 5 - 202</h3>
+                        <p class="property-summary">450m² • Rooftop • Vista 360°</p>
+                    </div>
+                </a>
+
+                <a href="./imagens_7-301/bloco7-301.html" class="property-card">
+                    <div class="property-image"><img src="../Site de Imóveis/imagens/cnjt8.jpeg" alt="Bloco_7-301"></div>
+                    <div class="property-content">
+                        <div class="property-price">R$ 120.000,00</div>
+                        <h3 class="property-title">bloco 7 - 301</h3>
+                        <p class="property-summary">450m² • Rooftop • Vista 360°</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="map-section">
+                <div class="map-flex">
+                    <div class="map-left">
+                        <h2 class="section-title">NOSSA LOCALIZAÇÃO</h2>
+                        <div class="map-container">
+                            <img src="../Site de Imóveis/imagens/foto do condominio.jpeg" alt="Localização Toulon">
+                        </div>
+                    </div>
+
+                    <div class="map-right">
+                        <h2 class="section-title">INFRAESTRUTURA</h2>
+                        <a href="./imagens_infra/infraestrutura do condominio.html" class="property-card">
+                            <div class="property-image">
+                                <img src="./imagens/foto da praça sem o zoom.jpg" alt="Infraestrutura">
+                            </div>
+                            <div class="property-content">
+                                <div class="property-price" style="font-size: 1.5rem;">Area comum do condomínio</div>
+                                <h3 class="infra-texto" style="font-size: 1.2rem;"> 
+                                    • Portaria 24hrs • Estacionamento rotativo • Quadra poliesportiva 
+                                    • Salão de festa amplo • Academia popular • Mercadinho 
+                                    • Praçinha • Horta comunitária
+                                </h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <h2 class="section-title">CAMPO GRANDE / RJ</h2>
+
+                <div class="text-box-item" style="margin-top: 1.5rem; text-align: center;">
+                    <h3>Cond Residencial Mount Blanc</h3>
+                    <p><strong style="font-size: 1.5rem; color: #000;">Av. Brasil - Campo Grande, RJ</strong></p>
+                </div> 
+
+                <div class="properties" style="margin-top: 2rem;">
+
+                    <a href="./imagens_MB_13-306/bloco13-306.html" class="property-card">
+                        <div class="property-image"><img src="../Site de Imóveis/imagens/cnjt10.jpeg" alt="Bloco_13-306"></div>
+                        <div class="property-content">
+                            <div class="property-price">R$ 135.000,00</div>
+                            <h3 class="property-title">Mount Blanc bloco 13 - 306</h3>
+                            <p class="property-summary">450m² • Rooftop • Vista 360°</p>
+                        </div>
+                    </a>
+
+                    <a href="./imagens_MB_1-103/MountBlancbloco01-103.html" class="property-card">
+                    <div class="property-image"><img src="../Site de Imóveis/imagens/cnjt3.jpeg" alt="Mount_Blanc_01-103"></div>
+                    <div class="property-content">
+                        <div class="property-price">R$ 170.000,00</div>
+                        <h3 class="property-title">Mount Blanc bloco 01 - 103</h3>
+                        <p class="property-summary">450m² • Rooftop • Vista 360°</p>
+                    </div>
+                </a>
+
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    <h2 class="section-title" style="margin-top: 3rem; margin-bottom: 4rem;">
+    OUTRAS LOCALIDADES
+    </h2>
+    
+
+<div class="properties">
+    
+    <a href="./imagens_cotovias_casa/cotiva-casa.html" class="property-card">
+                    <div class="property-image"><img src="./imagens_cotovias_casa/cotovias.jpg"></div>
+                    <div class="property-content">
+                        <div class="property-price">R$ 95.000,00</div>
+                        <h3 class="property-title">Casa Cotovias</h3>
+                        
+                    </div>
+                </a>
+
+    <a href="./imagens_sienna_terceiro_andar/terceiro-andar.html" class="property-card">
+                    <div class="property-image"><img src="./imagens_sienna_terceiro_andar/sienna (15).jpg" alt="Mount Blanc 01-103"></div>
+                    <div class="property-content">
+                        <div class="property-price">R$ 130.000,00</div>
+                        <h3 class="property-title">Cond. Sienna - Apto. 3° andar</h3>
+                        <p class="property-summary">450m² • Rooftop • Vista 360°</p>
+                    </div>
+                </a>
+
+    <a href="./imagens_Casa_Fazendia/Casa Fazendia.html" class="property-card">
+                    <div class="property-image"><img src="./imagens_Casa_Fazendia/k.fazendinha.jpg" alt="Mount_Blanc_01-103"></div>
+                    <div class="property-content">
+                        <div class="property-price">R$ 565.000,00</div>
+                        <h3 class="property-title">Casa Fazendinha</h3>
+                        <p class="property-summary">450m² • Rooftop • Vista 360°</p>
+                    </div>
+                </a>
+
+</div>
+
+    <footer class="main-footer">
+        <section id="contato" class="contato-section">
+    <div class="container-contato">
+        <div class="contato-info">
+            <div class="contato-logo-texto">
+                <span class="detalhe-losango">◆</span>
+                <h2>Zelimar <br> Consultoria</h2>
+            </div>
+            
+            <div class="contato-detalhes">
+                <h3>Contato</h3>
+                <p>📞 +55 (21) 98932-7184</p>
+                <p>📧 Zelimar.consultoria@gmail.com</p>
+                <p>⏰ Seg - Sex: 08:00 - 18:00</p>
+                <p>📍 Rio de Janeiro - RJ</p>
+                <p>Av. Brasil, 50851 - Campo Grande, Rio de Janeiro - RJ</p>
+            </div>
+        </div>
+
+        <div class="contato-form-container">
+            <h2>Quer vender ou alugar? Fale conosco.</h2>
+            <form class="contato-form" action="https://formspree.io/f/xyknqkpk" method="POST">
+    <input type="text" name="nome" placeholder="Nome Completo*" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="tel" name="telefone" id="telefone" placeholder="Telefone (DDD) 00000-0000" maxlength="15" required>
+    <textarea name="mensagem" placeholder="Mensagem" rows="5"></textarea>
+    
+    <input type="hidden" name="_subject" value="Novo contato do site Zelimar Consultoria">
+    
+    <button type="submit" class="btn-enviar">Enviar</button>
+</form>
+        </div>
+    </div>
+</section>
+    </footer>
+<script>
+    const tel = document.getElementById('telefone')
+
+    tel.addEventListener('keypress', (e) => {
+        let inputLength = tel.value.length
+
+        // Formatação: (00) 00000-0000
+        if (inputLength === 0) {
+            tel.value += '('
+        } else if (inputLength === 3) {
+            tel.value += ') '
+        } else if (inputLength === 10) {
+            tel.value += '-'
+        }
+    })
+</script>
+
+<footer class="footer-simples">
+    <p>&copy; 2026 Zelimar Consultoria</p>
+</footer>
+</body>
+</html>
