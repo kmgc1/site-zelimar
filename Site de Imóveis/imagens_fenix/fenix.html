@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bairro Ipiranga - Apartamento - Zelimar</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; }
+        :root { --laranja: #FF6B35; --branco: #FFF; }
+        
+        header {
+            background: linear-gradient(135deg, var(--laranja) 0%, #E55A2B 100%);
+            color: white; padding: 1rem 0; position: fixed; width: 100%; top: 0; z-index: 1000;
+        }
+        nav { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .logo { font-size: 1.5rem; font-weight: bold; }
+        .back-btn { 
+            background: white; color: var(--laranja); padding: 0.5rem 1rem; 
+            border-radius: 25px; text-decoration: none; font-weight: bold;
+        }
+        
+        .hero-detail {
+            background: linear-gradient(rgba(255,107,53,0.8), rgba(255,107,53,0.6)), 
+                        url('') center/cover;
+            height: 60vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; color: white; margin-top: 80px;
+        }
+        .hero-detail h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .hero-detail .price { font-size: 2rem; font-weight: bold; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .section { padding: 3rem 0; }
+        
+        .gallery {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem; margin-bottom: 3rem;
+        }
+        .gallery img {
+            width: 100%; height: 250px; object-fit: cover; border-radius: 15px;
+            cursor: pointer; transition: transform 0.3s;
+        }
+        .gallery img:hover { transform: scale(1.02); }
+        
+        .property-specs {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem; margin-bottom: 2rem;
+        }
+        .spec-item {
+            background: #f8f9fa; padding: 1.5rem; border-radius: 12px; text-align: center;
+        }
+        .spec-value { font-size: 1.8rem; font-weight: bold; color: var(--laranja); }
+        .spec-label { color: #6c757d; margin-top: 0.3rem; }
+        
+        .description {
+            background: #f8f9fa; padding: 2rem; border-radius: 15px; line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+        
+        .action-buttons {
+            display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: var(--laranja); color: white; padding: 1.2rem 3rem;
+            border: none; border-radius: 12px; font-size: 1.1rem; font-weight: bold;
+            cursor: pointer; transition: all 0.3s;
+        }
+        .btn-primary:hover { background: #E55A2B; transform: translateY(-2px); }
+        .btn-secondary {
+            background: white; color: var(--laranja); padding: 1.2rem 3rem;
+            border: 2px solid var(--laranja); border-radius: 12px; font-weight: bold;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-detail h1 { font-size: 2rem; } .action-buttons { flex-direction: column; }
+}
+/* Estilo comum para os dois botões */
+.btn-padrao {
+    /* Define uma largura fixa para garantir que sejam iguais */
+    width: 200px; 
+    
+    /* Ou use padding igual nos dois */
+    padding: 15px 0; 
+    
+    /* Garante que bordas e padding não aumentem o tamanho total */
+    box-sizing: border-box; 
+    
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    border: 2px solid transparent; /* Evita que o botão "pule" ao adicionar borda no outro */
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Cor específica do Laranja */
+.btn-agendar {
+    background-color: #ff6a33;
+    color: white;
+    border-color: #ff6a33;
+}
+
+/* Cor específica do Branco */
+.btn-whatsapp {
+    background-color: white;
+    color: #ff6a33;
+    border-color: #ff6a33;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html" class="logo">🏠</a>
+            <a href="../../index.html" class="back-btn">← Voltar aos Imóveis</a>
+        </nav>
+    </header>
+
+    <section class="hero-detail">
+        <div>
+            <h1>
+                <strong style="font-size: 4.0rem;">Apartamento</strong>
+            </h1>
+            <div class="price"></div>
+            <strong>
+            <p style="font-size: 1.5rem;">Bairro Ipiranga - Nova Iguaçu RJ.</p>
+            <p style="font-size: 1.2rem;">Rua peixe, 80</p>
+            </strong>
+        </div>
+    </section>
+
+    
+        </section>
+
+        
+
+        <!-- DESCRIÇÃO COMPLETA -->
+        <section class="section">
+            <div class="description">
+                <h3 style="color: var(--laranja); margin-bottom: 1rem; font-size: 2rem;">Apartamento</h3>
+                <p style="font-size: 1.5rem;">✅ Unidades térreas
+💰 Venda: R$ 165 mil
+
+
+✅ Unidades superiores
+💰 Venda: R$ 160 mil
+
+
+Parcelamos R$ 10.000 de entrada em até 60 meses!
+
+⚠️ Não percam a chance de fechar grandes negócios com condições atrativas e excelente potencial de valorização!
+21 98932-7184 
+Zelimar Consultoria</p>
+            </div>
+        </section>
+
+        <!-- BOTÕES DE AÇÃO -->
+        <section class="section">
+            <div class="action-buttons">
+                <a href="https://wa.me/989327184?text=Quero%20mais%20info%20do%20apto%20Jardins" target="_blank" style="text-decoration: none;">
+                    <button class="btn-padrao btn-agendar">Agendar Visita</button>
+                </a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
