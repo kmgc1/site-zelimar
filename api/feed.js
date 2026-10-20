@@ -93,17 +93,6 @@ export default function handler(req, res) {
       }))
     },
     {
-      id: 'BL10-105',
-      title: 'Apartamento Bloco 10 Ap 105',
-      price: '120000',
-      url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_10-105/bloco10-105.html`,
-      media: Array.from({ length: 10 }, (_, i) => ({
-        type: 'image',
-        caption: `Foto ${i}`,
-        url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_10-105/${i}.jpeg`
-      }))
-    },
-    {
       id: 'BL10-106',
       title: 'Apartamento Bloco 10 Ap 106',
       price: '120000',
@@ -112,17 +101,6 @@ export default function handler(req, res) {
         type: 'image',
         caption: `Foto ${i}`,
         url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_10-106/${i}.jpeg`
-      }))
-    },
-    {
-      id: 'BL12-205',
-      title: 'Apartamento Bloco 12 Ap 205',
-      price: '125000',
-      url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_12-205/bloco12-205.html`,
-      media: Array.from({ length: 13 }, (_, i) => ({
-        type: 'image',
-        caption: `Foto ${i}`,
-        url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_12-205/${i}.jpeg`
       }))
     },
     {
@@ -189,58 +167,6 @@ export default function handler(req, res) {
       }))
     },
     {
-      id: 'COND-RED',
-      title: 'Condomínio Red',
-      price: '150000',
-      url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_cond.red/imagens_condRed.html`,
-      media: Array.from({ length: 9 }, (_, i) => ({
-        type: 'image',
-        caption: `Foto ${i + 1}`,
-        url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_cond.red/cond.red${i + 1}.jpeg`
-      }))
-    },
-    {
-      id: 'COTOVIAS-5',
-      title: 'Cotovias (5º Andar)',
-      price: '140000',
-      url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_cotovias_5%C2%B0/index.html`,
-      media: [
-        { type: 'video', caption: 'Vídeo do Imóvel', url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_cotovias_5%C2%B0/WhatsApp%20Video%202026-09-23%20at%2022.31.30.mp4` }
-      ]
-    },
-    {
-      id: 'COTOVIAS-AP',
-      title: 'Cotovias (Apartamento)',
-      price: '145000',
-      url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_cotovias_ap/cotovias_ap.html`,
-      media: [
-        { type: 'image', caption: 'Vista do Imóvel', url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_cotovias_ap/imagem_de_cima.jpeg` },
-        { type: 'video', caption: 'Vídeo do Imóvel', url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_cotovias_ap/video_cotovias_ap.mp4` }
-      ]
-    },
-    {
-      id: 'COTOVIAS-CASA',
-      title: 'Casa Cotovias',
-      price: '190000',
-      url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_cotovias_casa/cotiva-casa.html`,
-      media: Array.from({ length: 7 }, (_, i) => ({
-        type: 'image',
-        caption: `Foto ${i + 1}`,
-        url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_cotovias_casa/cotovias%20${i + 1}.jpg`
-      }))
-    },
-    {
-      id: 'FENIX',
-      title: 'Residencial Fenix',
-      price: '150000',
-      url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_fenix/fenix.html`,
-      media: Array.from({ length: 10 }, (_, i) => ({
-        type: 'image',
-        caption: `Foto ${i + 1}`,
-        url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_fenix/fenix${i + 1}.jpeg`
-      }))
-    },
-    {
       id: 'INFRA',
       title: 'Infraestrutura do Condomínio',
       price: '0',
@@ -249,17 +175,6 @@ export default function handler(req, res) {
         type: 'image',
         caption: `Foto Infra ${i + 1}`,
         url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_infra/infra${i + 1}.jpeg`
-      }))
-    },
-    {
-      id: 'IPIRANGA',
-      title: 'Imóvel Ipiranga',
-      price: '160000',
-      url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_ipiranga/ipiranga.html`,
-      media: Array.from({ length: 10 }, (_, i) => ({
-        type: 'image',
-        caption: `Foto ${i + 1}`,
-        url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_ipiranga/ipiranga${i + 1}.jpeg`
       }))
     },
     {
@@ -304,17 +219,6 @@ export default function handler(req, res) {
         type: 'image',
         caption: `Foto ${code.toUpperCase()}`,
         url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_MT9_3%C2%B0/${code}.jpeg`
-      }))
-    },
-    {
-      id: 'RODILANDIA',
-      title: 'Imóvel Rodilândia',
-      price: '140000',
-      url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_rodilandia/rodilandia.html`,
-      media: Array.from({ length: 10 }, (_, i) => ({
-        type: 'image',
-        caption: `Foto ${i + 1}`,
-        url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_rodilandia/rodilandia${i + 1}.jpeg`
       }))
     },
     {
