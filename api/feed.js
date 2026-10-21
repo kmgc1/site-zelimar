@@ -8,6 +8,7 @@ export default function handler(req, res) {
       id: 'BL1-102',
       title: 'Apartamento Bloco 1 Ap 102',
       price: '120000',
+      neighborhood: 'Campo Grande',
       url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_1-102/bloco1-102.html`,
       media: Array.from({ length: 10 }, (_, i) => ({
         type: 'image',
@@ -19,6 +20,7 @@ export default function handler(req, res) {
       id: 'BL2-202',
       title: 'Apartamento Bloco 02 Ap 202',
       price: '120000',
+      neighborhood: 'Campo Grande',
       url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_02-202/bloco02-202.html`,
       media: Array.from({ length: 12 }, (_, i) => ({
         type: 'image',
@@ -30,6 +32,7 @@ export default function handler(req, res) {
       id: 'BL5-202',
       title: 'Apartamento Bloco 5 Ap 202',
       price: '120000',
+      neighborhood: 'Campo Grande',
       url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_5-202/bloco5-202.html`,
       media: Array.from({ length: 10 }, (_, i) => ({
         type: 'image',
@@ -41,6 +44,7 @@ export default function handler(req, res) {
       id: 'BL6-103',
       title: 'Apartamento Bloco 6 Ap 103',
       price: '120000',
+      neighborhood: 'Campo Grande',
       url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_6-103/bloco6-103.html`,
       media: Array.from({ length: 10 }, (_, i) => ({
         type: 'image',
@@ -52,6 +56,7 @@ export default function handler(req, res) {
       id: 'BL7-104',
       title: 'Apartamento Bloco 7 Ap 104',
       price: '120000',
+      neighborhood: 'Campo Grande',
       url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_7-104/bloco7-104.html`,
       media: Array.from({ length: 10 }, (_, i) => ({
         type: 'image',
@@ -63,6 +68,7 @@ export default function handler(req, res) {
       id: 'BL7-204',
       title: 'Apartamento Bloco 7 Ap 204',
       price: '120000',
+      neighborhood: 'Campo Grande',
       url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_7-204/bloco7-204.html`,
       media: Array.from({ length: 10 }, (_, i) => ({
         type: 'image',
@@ -71,20 +77,10 @@ export default function handler(req, res) {
       }))
     },
     {
-      id: 'BL7-301',
-      title: 'Apartamento Bloco 7 Ap 301',
-      price: '120000',
-      url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_7-301/bloco7-301.html`,
-      media: Array.from({ length: 10 }, (_, i) => ({
-        type: 'image',
-        caption: `Foto ${i}`,
-        url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_7-301/${i}.jpeg`
-      }))
-    },
-    {
       id: 'BL10-101',
       title: 'Apartamento Bloco 10 Ap 101',
       price: '120000',
+      neighborhood: 'Campo Grande',
       url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_10-101/bloco10-101.html`,
       media: Array.from({ length: 10 }, (_, i) => ({
         type: 'image',
@@ -93,9 +89,22 @@ export default function handler(req, res) {
       }))
     },
     {
+      id: 'BL10-105',
+      title: 'Apartamento Bloco 10 Ap 105',
+      price: '120000',
+      neighborhood: 'Campo Grande',
+      url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_10-105/bloco10-105.html`,
+      media: Array.from({ length: 10 }, (_, i) => ({
+        type: 'image',
+        caption: `Foto ${i}`,
+        url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_10-105/${i}.jpeg`
+      }))
+    },
+    {
       id: 'BL10-106',
       title: 'Apartamento Bloco 10 Ap 106',
       price: '120000',
+      neighborhood: 'Campo Grande',
       url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_10-106/bloco10-106.html`,
       media: Array.from({ length: 14 }, (_, i) => ({
         type: 'image',
@@ -104,9 +113,22 @@ export default function handler(req, res) {
       }))
     },
     {
+      id: 'BL12-205',
+      title: 'Apartamento Bloco 12 Ap 205',
+      price: '125000',
+      neighborhood: 'Campo Grande',
+      url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_12-205/bloco12-205.html`,
+      media: Array.from({ length: 13 }, (_, i) => ({
+        type: 'image',
+        caption: `Foto ${i}`,
+        url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_12-205/${i}.jpeg`
+      }))
+    },
+    {
       id: 'BL14-106',
       title: 'Apartamento Bloco 14 Ap 106',
       price: '130000',
+      neighborhood: 'Campo Grande',
       url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_14-106/bloco14-106.html`,
       media: [
         { type: 'image', caption: 'Cozinha', url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_14-106/cozinha.jpeg` },
@@ -122,6 +144,7 @@ export default function handler(req, res) {
       id: 'BL14-202',
       title: 'Apartamento Bloco 14 Ap 202',
       price: '135000',
+      neighborhood: 'Campo Grande',
       url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_14-202/bl14-202.html`,
       media: [
         { type: 'image', caption: 'Frente', url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_14-202/WhatsApp%20Image%202026-10-19%20at%2016.58.19.jpeg` },
@@ -139,6 +162,7 @@ export default function handler(req, res) {
       id: 'BL15-3',
       title: 'Apartamento Bloco 15 (3º Andar)',
       price: '125000',
+      neighborhood: 'Campo Grande',
       url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_15-3%C2%B0/bl15-3%C2%B0.html`,
       media: [
         { type: 'image', caption: 'Cozinha', url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_15-3%C2%B0/WhatsApp%20Image%202026-09-23%20at%2022.13.51.jpeg` },
@@ -159,6 +183,7 @@ export default function handler(req, res) {
       id: 'FAZENDINHA',
       title: 'Casa Fazendinha',
       price: '180000',
+      neighborhood: 'Realengo',
       url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_Casa_Fazendia/Casa%20Fazendia.html`,
       media: ['a','b','c','d','e','f','g','h','i','j','k'].map((letter, i) => ({
         type: 'image',
@@ -167,20 +192,46 @@ export default function handler(req, res) {
       }))
     },
     {
-      id: 'INFRA',
-      title: 'Infraestrutura do Condomínio',
-      price: '0',
-      url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_infra/infra.html`,
+      id: 'COND-RED',
+      title: 'Condomínio Red',
+      price: '150000',
+      neighborhood: 'Nova Iguaçu, km32',
+      url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_cond.red/imagens_condRed.html`,
+      media: Array.from({ length: 9 }, (_, i) => ({
+        type: 'image',
+        caption: `Foto ${i + 1}`,
+        url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_cond.red/cond.red${i + 1}.jpeg`
+      }))
+    },
+    {
+      id: 'FENIX',
+      title: 'Residencial Fenix',
+      price: '150000',
+      neighborhood: 'Nova Iguaçu, km32',
+      url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_fenix/fenix.html`,
       media: Array.from({ length: 10 }, (_, i) => ({
         type: 'image',
-        caption: `Foto Infra ${i + 1}`,
-        url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_infra/infra${i + 1}.jpeg`
+        caption: `Foto ${i + 1}`,
+        url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_fenix/fenix${i + 1}.jpeg`
+      }))
+    },
+    {
+      id: 'IPIRANGA',
+      title: 'Imóvel Ipiranga',
+      price: '160000',
+      neighborhood: 'Nova Iguaçu, km32',
+      url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_ipiranga/ipiranga.html`,
+      media: Array.from({ length: 10 }, (_, i) => ({
+        type: 'image',
+        caption: `Foto ${i + 1}`,
+        url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_ipiranga/ipiranga${i + 1}.jpeg`
       }))
     },
     {
       id: 'MB-1-103',
       title: 'Mount Blanc Bloco 01 Ap 103',
       price: '160000',
+      neighborhood: 'Campo Grande',
       url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_MB_1-103/MountBlancbloco01-103.html`,
       media: Array.from({ length: 15 }, (_, i) => ({
         type: 'image',
@@ -192,6 +243,7 @@ export default function handler(req, res) {
       id: 'MB-13-306',
       title: 'Mount Blanc Bloco 13 Ap 306',
       price: '165000',
+      neighborhood: 'Campo Grande',
       url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_MB_13-306/bloco13-306.html`,
       media: ['a','b','c','d','e','f','g','h','i','k'].map((letter) => ({
         type: 'image',
@@ -203,6 +255,7 @@ export default function handler(req, res) {
       id: 'MBG',
       title: 'Mont Blanc',
       price: '170000',
+      neighborhood: 'Campo Grande',
       url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_MontBlancc/mbg.html`,
       media: ['A','B','C','D','E','F','G','H'].map((letter) => ({
         type: 'image',
@@ -214,6 +267,7 @@ export default function handler(req, res) {
       id: 'MT9-3',
       title: 'MT9 (3º Andar)',
       price: '155000',
+      neighborhood: 'Campo Grande',
       url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_MT9_3%C2%B0/index.html`,
       media: ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','t','u','v','w','x','y','z','za','zb','zc','zd','ze'].map((code) => ({
         type: 'image',
@@ -222,9 +276,22 @@ export default function handler(req, res) {
       }))
     },
     {
+      id: 'RODILANDIA',
+      title: 'Imóvel Rodilândia',
+      price: '140000',
+      neighborhood: 'Nova Iguaçu, km32',
+      url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_rodilandia/rodilandia.html`,
+      media: Array.from({ length: 10 }, (_, i) => ({
+        type: 'image',
+        caption: `Foto ${i + 1}`,
+        url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_rodilandia/rodilandia${i + 1}.jpeg`
+      }))
+    },
+    {
       id: 'SIENA-2',
       title: 'Siena 2',
       price: '140000',
+      neighborhood: 'Austin',
       url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_siena_2/siena2.html`,
       media: [
         { type: 'image', caption: 'Sala', url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_siena_2/salaa.jpeg` },
@@ -238,6 +305,7 @@ export default function handler(req, res) {
       id: 'SIENNA-3',
       title: 'Sienna (Terceiro Andar)',
       price: '145000',
+      neighborhood: 'Austin',
       url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_sienna_terceiro_andar/terceiro-andar.html`,
       media: [
         { type: 'image', caption: 'Foto 1', url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_sienna_terceiro_andar/sienna.jpg` },
@@ -273,6 +341,7 @@ export default function handler(req, res) {
         <Country abbreviation="BR">Brasil</Country>
         <State abbreviation="RJ">Rio de Janeiro</State>
         <City>Rio de Janeiro</City>
+        <Neighborhood>${p.neighborhood}</Neighborhood>
       </Location>
     </Listing>`).join('\n');
 
