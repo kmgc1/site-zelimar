@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apartamento Jardins - R$850k - Zelimar</title>
+    <title>Apartamento cotovias - R$850k - Zelimar</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', sans-serif; }
@@ -33,14 +33,23 @@
         .section { padding: 3rem 0; }
         
         .gallery {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem; margin-bottom: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 3rem;
         }
         .gallery img {
             width: 100%; height: 250px; object-fit: cover; border-radius: 15px;
             cursor: pointer; transition: transform 0.3s;
         }
         .gallery img:hover { transform: scale(1.02); }
+
+        .video-imovel {
+            width: 200%;
+            max-width: 550px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
         
         .property-specs {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -74,8 +83,8 @@
         
         @media (max-width: 768px) {
             .hero-detail h1 { font-size: 2rem; } .action-buttons { flex-direction: column; }
-        }
-        /* Estilo comum para os dois botões */
+}
+/* Estilo comum para os dois botões */
 .btn-padrao {
     /* Define uma largura fixa para garantir que sejam iguais */
     width: 200px; 
@@ -119,76 +128,55 @@
         </nav>
     </header>
 
-   <section class="hero-detail">
+    <section class="hero-detail">
         <div>
             <h1>
-                <strong style="font-size: 4.0rem;">Bloco 12 - 205</strong>
+                <strong style="font-size: 4.0rem;">Apartamento</strong>
             </h1>
-            <div class="price">R$ 150.000,00</div>
-            <p>COND. RESIDENCIAL TOULON - AV. BRASIL, CAMPO GRANDE/RJ</p>
+            <div class="price">R$ 85.000,00</div>
+            <strong>
+            <p style="font-size: 1.5rem;">Cond. Cotovias - C. Grande/RJ.</p>
+            <p style="font-size: 1.2rem;">Estrada do Campinho</p>
+            </strong>
         </div>
     </section>
 
     <div class="container">
         <!-- ✅ GALERIA COMPLETA -->
         <section class="section">
-            <h2 style="text-align: center; color: var(--laranja); margin-bottom: 2rem;">Galeria de Fotos</h2>
+            <h2 style="text-align:center; color:var(--laranja); margin-bottom:10px;">
+    🎥 Faça um Tour pelo Imóvel
+</h2>
+
+<p style="text-align:center; font-size:1.2rem; color:#666; margin-bottom:30px;">
+    Assista ao vídeo e conheça cada detalhe deste apartamento.
+</p>
             <div class="gallery">
-                <img src="../imagens_12-205/0.jpeg" alt="">
-                <img src="../imagens_12-205/1.jpeg" alt="">
-                <img src="../imagens_12-205/2.jpeg" alt="">
-                <img src="../imagens_12-205/3.jpeg" alt="">
-                <img src="../imagens_12-205/4.jpeg" alt="">
-                <img src="../imagens_12-205/5.jpeg" alt="">
-                <img src="../imagens_12-205/6.jpeg" alt="">
-                <img src="../imagens_12-205/7.jpeg" alt="">
-                <img src="../imagens_12-205/8.jpeg" alt="">
-                <img src="../imagens_12-205/9.jpeg" alt="">
-                <img src="../imagens_12-205/10.jpeg" alt="">
-                <img src="../imagens_12-205/11.jpeg" alt="">
-                <img src="../imagens_12-205/12.jpeg" alt="">
-
-               <img src="../imagens_12-205/222.jpeg" alt="">
-                <img src="../imagens_12-205/333.jpeg" alt="">
-                <img src="../imagens_12-205/444.jpeg" alt="">
-                <img src="../imagens_12-205/555.jpeg" alt="">
-                <img src="../imagens_12-205/666.jpeg" alt="">
-                <img src="../imagens_12-205/777.jpeg" alt="">
-                <img src="../imagens_12-205/888.jpeg" alt="">
-                <img src="../imagens_12-205/111.jpeg" alt="">
+                <video class="video-imovel" controls>
+                    <source src="./video_cotovias_ap.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos HTML5.
+                </video>
+                
             </div>
         </section>
 
-        <!-- ESPECIFICAÇÕES -->
-        <section class="section">
-            <div class="property-specs">
-                <div class="spec-item">
-                    <div class="spec-value">45m²</div>
-                    <div class="spec-label">Área útil</div>
-                </div>
-                <div class="spec-item">
-                    <div class="spec-value">2 quartos</div>
-                    <div class="spec-label">Quartos</div>
-                </div>
-                <div class="spec-item">
-                    <div class="spec-value">Estacionamento rotativo</div>
-                    <div class="spec-label">Garagem</div>
-                </div>
-                <div class="spec-item">
-                    <div class="spec-value">2008</div>
-                    <div class="spec-label">Ano</div>
-                </div>
-            </div>
-        </section>
+        
 
         <!-- DESCRIÇÃO COMPLETA -->
         <section class="section">
             <div class="description">
-                <h3 style="color: var(--laranja); margin-bottom: 1rem; font-size: 2rem;">Apartamento Ellegance</h3>
-                <p style="font-size: 1.5rem;">Condomínio Toulon🤩
-Reformado. Portaria 24h. Apartamento com 2 quartos, sala com rebaixamento de teto e luminárias, cozinha (armario), banheiro com box. Aceito financiamento. 
-Documentação Totalmente em dia.
-</p>
+                <h3 style="color: var(--laranja); margin-bottom: 1rem; font-size: 2rem;">Apartamento / 45m²</h3>
+                <p style="font-size: 1.5rem;">Apartamento excelente estado.
+Documentação em dia, com RGI
+
+Sossego total. (5° Andar)
+Infraestrutura (Portaria 24hs, estacionamento, quadra poliesportiva, Pq. Salão de festas).
+Ônibus na porta (Campo Grande, Sta. Cruz e Centro do RJ).
+ 
+21 98932-7184 
+Zelimar Consultoria
+
+CONDOMINIO BARATO - 45M2 - IPTU ISENTO - 01 BANHEIRO - ESTRADA DO CAMPINHO. - Toda Infraestrutura: Portaria 24hs/ Estacionamento/ Quadra/ Salão de Festas.  - OPORTUNIDADE!!!!</p>
             </div>
         </section>
 
