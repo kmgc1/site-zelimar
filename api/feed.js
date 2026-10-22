@@ -279,7 +279,7 @@ export default function handler(req, res) {
       id: 'RODILANDIA',
       title: 'Imóvel Rodilândia',
       price: '140000',
-      neighborhood: 'Nova Iguaçu, km32',
+      neighborhood: 'Nova Iguaçu',
       url: `${baseUrl}/Site%20de%20Im%C3%B3veis/imagens_rodilandia/rodilandia.html`,
       media: Array.from({ length: 10 }, (_, i) => ({
         type: 'image',
